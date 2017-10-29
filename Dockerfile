@@ -45,9 +45,6 @@ COPY php.ini /usr/local/etc/php/
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
 RUN tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C ${WEB_REPO}/ --strip-components=1
 
-COPY bin/ ${WEB_REPO}/bin/
-
-
 
 RUN cp ${WEB_REPO}/config.dist.php ${WEB_REPO}/config.php && \
     sed -i -e "s/Listen 80/Listen 8080/" /etc/apache2/ports.conf &&\
