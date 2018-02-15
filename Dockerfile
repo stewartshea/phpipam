@@ -56,6 +56,7 @@ RUN cp ${WEB_REPO}/config.dist.php ${WEB_REPO}/config.php && \
     ${WEB_REPO}/config.php
 
 USER 100011007
+RUN touch test.txt
 
 WORKDIR ${WEB_REPO}
 
